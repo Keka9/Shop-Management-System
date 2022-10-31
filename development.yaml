@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  authentication_database_server:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - '3306:3306'
+  shop_database_server:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - '3307:3306'
+  adminer:
+    image: adminer:latest
+    ports:
+      - '8080:8080'
+  redis:
+    image: redis:latest
+    ports:
+      - '6379:6379'
